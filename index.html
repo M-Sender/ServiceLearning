@@ -14524,23 +14524,23 @@ a.anchor-link {
 One route we can take is analyzing the data set to focusing on emergency response and answer questions regarding that. If this route is chosen, another dataset that could be of use is <a href=https://data.nola.gov/dataset/Police-Zones/fngt-zkj9> Police Zone Information</a>. This lets us expand our questions to answer more zone and area specific questions. Questions that we can answer going this route are:</h4></p>
 <p><ul></p>
 <p><li>Average response time by incident?</li>
-    -We could extract a column of response times (using TimeArrive - TimeDispatch values) and take the mean of those values for each type of incident</p>
+    <ul><li>We could extract a column of response times (using TimeArrive - TimeDispatch values) and take the mean of those values for each type of incident</li></ul></p>
 <p><li>Average response time by zone/area?</li></p>
-<p><li>Using that same response time column, we could look at the means across different areas (using the police district or zip column of this dataset)</li></p>
+<p><ul><li>Using that same response time column, we could look at the means across different areas (using the police district or zip column of this dataset)</li></ul></p>
 <p><li>Average response time by incident in specific areas?</li></p>
-<p><li>Using the results of the last question, we could further specify the avergage response time across incident type column values AND area column values.</li></p>
+<p><ul><li>Using the results of the last question, we could further specify the avergage response time across incident type column values AND area column values.</li></ul></p>
 <p><li>Using zone information and response time, determine "holes" in the zones where response time is higher than the norm or where the area has an increase in crime due to the response times.</li></p>
-<p><li>We could use measures of variance like the standard deviation from average response time, which would allow us to identify 'holes' wherever the response time is far higher than average.</li>
+<p><ul><li>We could use measures of variance like the standard deviation from average response time, which would allow us to identify 'holes' wherever the response time is far higher than average.</li></ul>
 &lt;/ul&gt;</p>
 <p><h4>Another route we can go with the data is focusing more on the crime aspect of the data set. This route will be more focused on answering questions about crime in specific areas instead of the emergency response.</h4></p>
 <p><ul></p>
 <p><li>Average response time by area?</li></p>
 <p><li>Most frequent crimes in specific areas?</li></p>
-<p><li>By getting the value counts of each type of crime in each area we can generalize patterns like violent crime happening more in one area, theft in another, etc</li></p>
+<p><ul><li>By getting the value counts of each type of crime in each area we can generalize patterns like violent crime happening more in one area, theft in another, etc</li></ul></p>
 <p><li>Most frequest crimes by time of day in conjunction with a specific area?</li></p>
-<p><li>Get the value counts of each different crime for each time of day (we could categorize into several-hour windows like afternoon, evening, night, late night)</li></p>
+<p><ul><li>Get the value counts of each different crime for each time of day (we could categorize into several-hour windows like afternoon, evening, night, late night)</li></ul></p>
 <p><li>Using frequency, determine safer or more dangerous areas depending on the nature of the crimes that are most frequent there.</li></p>
-<p><li>Analyzing the possible values for entries in the TypeText column would allow us to differentiate violent (assault and/or battery, sexual assualt, domestic disturbance) from nonviolent (theft, fireworks, burglar alarms) incidents, 2 categories which crime in each area could now be fit into.</li>
+<p><ul><li>Analyzing the possible values for entries in the TypeText column would allow us to differentiate violent (assault and/or battery, sexual assualt, domestic disturbance) from nonviolent (theft, fireworks, burglar alarms) incidents, 2 categories which crime in each area could now be fit into.</li></ul>
 &lt;/ul&gt;</p>
 <p><h4>There are more routes we can choose from and more questions will come to mind upon further analysis of the datasets. A combination of multiple routes will most likely render the most promising and insightful results.</h4></p>
 <p><h2>Collaboration plan:</h2></p>
