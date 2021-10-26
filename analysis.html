@@ -14517,19 +14517,28 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>1<a href=https://m-sender.github.io/ServiceLearning>Click here for live site!</a></p>
 <p><h1><b>Max Sender and Sam Traylor</b></h1></p>
-<h2>Data set </h2>
-<h3>Data set link: <a href=https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-2021/3pha-hum9>Calls for service 2021</a></h3> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What this data set is:his data set is a collection of 9-1-1 calls in 2021 in the New Orleans Area. This set contains basic things such as the type of incident, where it was, the police department, and timing, and more. 
-
-<h2>Questions:</h2><ul><li>Crossing the data from a police department zoning map from <a href=https://data.nola.gov/dataset/Police-Zones/fngt-zkj9>this data set</a> and seeing if "holes" can be found in the police reporting zones and where there may have been an uptick in calls made or where the response time was increased relative to the norm.</li>
-<li>If certain areas are prone to certain types of crime and if this is due to what is found in the first question or due to the time it takes for the police to respond at the scene.</li>
-<li>The last being finding which police departments had the fastest and slowest response time for each category of incidents.</li></ul>
-<h2>Collaboration plan:</h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
+<p><h2>Data set </h2></p>
+<p><h3>Data set link: <a href=https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-2021/3pha-hum9>Calls for service 2021</a></h3> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What this data set is a collection of 9-1-1 calls in 2021 in the New Orleans Area. This set contains basic things such as the type of incident, where it was, the police department, and timing, and more.</p>
+<p><h2>Questions</h2></p>
+<p><h4>We find this data set to be very insightful and can answer a lot of different questions. 
+One route we can take is analyzing the data set to focusing on emergency response and answer questions regarding that. If this route is chosen, another dataset that could be of use is <a href=https://data.nola.gov/dataset/Police-Zones/fngt-zkj9> Police Zone Information</a>. This lets us expand our questions to answer more zone and area specific questions. Questions that we can answer going this route are:</h4></p>
+<p><ul></p>
+<p><li>Average response time by incident?</li></p>
+<p><li>Average response time by zone/area?</li></p>
+<p><li>Average response time by incident in specific areas?</li></p>
+<p><li>Using zone information and response time, determine "holes" in the zones where response time is higher than the norm or where the area has an increase in crime due to the response times.</li>
+&lt;/ul&gt;</p>
+<p><h4>Another route we can go with the data is focusing more on the crime aspect of the data set. This route will be more focused on answering questions about crime in specific areas instead of the emergency response.</h4></p>
+<p><ul></p>
+<p><li>Average response time by area?</li></p>
+<p><li>Most frequent crimes in specific areas?</li></p>
+<p><li>Most frequest crimes by time of day in conjunction with a specific area?</li></p>
+<p><li>Using frequency, determine safer or more dangerous areas depending on the nature of the crimes that are most frequent there.</li>
+&lt;/ul&gt;</p>
+<p><h4>There are more routes we can choose from and more questions will come to mind upon further analysis of the datasets. A combination of multiple routes will most likely render the most promising and insightful results.</h4></p>
+<p><h2>Collaboration plan:</h2></p>
+<p>We plan to collaborate via meetings over zoom, and store our data in a shared github. Any particular challenges that have to be solved in a pair-programming setting will be dealt with using live share on vscode.</p>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14550,10 +14559,11 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_Calls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Calls_for_Service_2021.csv&quot;</span><span class="p">)</span>
+<span class="n">df_zones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Police_Zones_data.csv&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14564,10 +14574,11 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_Calls</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_Calls</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df_Calls</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14583,7 +14594,24 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Index([&#39;NOPD_Item&#39;, &#39;Type&#39;, &#39;TypeText&#39;, &#39;Priority&#39;, &#39;InitialType&#39;,
+       &#39;InitialTypeText&#39;, &#39;InitialPriority&#39;, &#39;MapX&#39;, &#39;MapY&#39;, &#39;TimeCreate&#39;,
+       &#39;TimeDispatch&#39;, &#39;TimeArrive&#39;, &#39;TimeClosed&#39;, &#39;Disposition&#39;,
+       &#39;DispositionText&#39;, &#39;SelfInitiated&#39;, &#39;Beat&#39;, &#39;BLOCK_ADDRESS&#39;, &#39;Zip&#39;,
+       &#39;PoliceDistrict&#39;, &#39;Location&#39;],
+      dtype=&#39;object&#39;)
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -14751,152 +14779,128 @@ a.anchor-link {
       <td>POINT (-90.00138771 30.01667289)</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>353263</th>
-      <td>J2620121</td>
-      <td>21M</td>
-      <td>MISSING ADULT</td>
-      <td>1C</td>
-      <td>21M</td>
-      <td>MISSING ADULT</td>
-      <td>1C</td>
-      <td>3729775</td>
-      <td>562925</td>
-      <td>10/21/2021 11:30:17 PM</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>10/22/2021 12:09:50 AM</td>
-      <td>VOI</td>
-      <td>VOID</td>
-      <td>N</td>
-      <td>7L02</td>
-      <td>049XX Treves St</td>
-      <td>70129</td>
-      <td>7</td>
-      <td>POINT (-89.91440911 30.04029447)</td>
-    </tr>
-    <tr>
-      <th>353264</th>
-      <td>J2490021</td>
-      <td>21N</td>
-      <td>NOISE COMPLAINT</td>
-      <td>1G</td>
-      <td>21N</td>
-      <td>NOISE COMPLAINT</td>
-      <td>1G</td>
-      <td>3662923</td>
-      <td>528037</td>
-      <td>10/21/2021 12:45:24 AM</td>
-      <td>...</td>
-      <td>10/21/2021 01:16:49 AM</td>
-      <td>10/21/2021 01:23:44 AM</td>
-      <td>NAT</td>
-      <td>Necessary Action Taken</td>
-      <td>N</td>
-      <td>2L03</td>
-      <td>078XX Plum St</td>
-      <td>70118</td>
-      <td>2</td>
-      <td>POINT (-90.12684511 29.94647035)</td>
-    </tr>
-    <tr>
-      <th>353265</th>
-      <td>J2502321</td>
+      <th>5</th>
+      <td>A0000721</td>
       <td>22A</td>
       <td>AREA CHECK</td>
       <td>1K</td>
       <td>22A</td>
       <td>AREA CHECK</td>
       <td>1K</td>
-      <td>3693130</td>
-      <td>522327</td>
-      <td>10/21/2021 03:26:37 AM</td>
+      <td>3689294</td>
+      <td>523714</td>
+      <td>01/01/2021 12:02:37 AM</td>
       <td>...</td>
-      <td>10/21/2021 03:26:37 AM</td>
-      <td>10/21/2021 03:58:39 AM</td>
+      <td>01/01/2021 12:02:37 AM</td>
+      <td>01/01/2021 01:00:39 AM</td>
       <td>NAT</td>
       <td>Necessary Action Taken</td>
       <td>Y</td>
-      <td>4I04</td>
-      <td>026XX General De Gaulle Dr</td>
+      <td>4A05</td>
+      <td>Thayer St &amp; Shepard St</td>
       <td>70114</td>
       <td>4</td>
-      <td>POINT (-90.03167551 29.92986047)</td>
+      <td>POINT (-90.04373626 29.93379453)</td>
     </tr>
     <tr>
-      <th>353266</th>
-      <td>J2503021</td>
-      <td>22A</td>
-      <td>AREA CHECK</td>
-      <td>1K</td>
-      <td>22A</td>
-      <td>AREA CHECK</td>
-      <td>1K</td>
-      <td>3665361</td>
-      <td>552024</td>
-      <td>10/21/2021 03:32:36 AM</td>
+      <th>6</th>
+      <td>A0000821</td>
+      <td>94F</td>
+      <td>FIREWORKS</td>
+      <td>1A</td>
+      <td>94F</td>
+      <td>FIREWORKS</td>
+      <td>2J</td>
+      <td>3685751</td>
+      <td>537403</td>
+      <td>01/01/2021 12:03:15 AM</td>
       <td>...</td>
-      <td>10/21/2021 03:32:36 AM</td>
-      <td>10/21/2021 04:39:29 AM</td>
+      <td>NaN</td>
+      <td>01/01/2021 12:03:42 AM</td>
       <td>NAT</td>
       <td>Necessary Action Taken</td>
-      <td>Y</td>
-      <td>3C01</td>
-      <td>Fleur De Lis Dr &amp; 36th St</td>
-      <td>70124</td>
-      <td>3</td>
-      <td>POINT (-90.11834449 30.01235667)</td>
+      <td>N</td>
+      <td>5B03</td>
+      <td>013XX Mandeville St</td>
+      <td>70117</td>
+      <td>5</td>
+      <td>POINT (-90.05443947 29.971544)</td>
     </tr>
     <tr>
-      <th>353267</th>
-      <td>J2534221</td>
-      <td>22A</td>
-      <td>AREA CHECK</td>
-      <td>1K</td>
-      <td>22A</td>
-      <td>AREA CHECK</td>
-      <td>1K</td>
-      <td>3666847</td>
-      <td>536901</td>
-      <td>10/21/2021 10:16:49 AM</td>
+      <th>7</th>
+      <td>A0000921</td>
+      <td>94</td>
+      <td>DISCHARGING FIREARM</td>
+      <td>2D</td>
+      <td>94</td>
+      <td>DISCHARGING FIREARM</td>
+      <td>2D</td>
+      <td>3699517</td>
+      <td>533522</td>
+      <td>01/01/2021 12:04:11 AM</td>
       <td>...</td>
-      <td>10/21/2021 10:16:49 AM</td>
-      <td>10/21/2021 10:50:51 AM</td>
-      <td>NAT</td>
-      <td>Necessary Action Taken</td>
-      <td>Y</td>
-      <td>2T04</td>
-      <td>Monroe St &amp; Dixon St</td>
-      <td>70118</td>
-      <td>2</td>
-      <td>POINT (-90.11415644 29.97072862)</td>
+      <td>01/01/2021 12:59:57 AM</td>
+      <td>01/01/2021 01:06:54 AM</td>
+      <td>GOA</td>
+      <td>GONE ON ARRIVAL</td>
+      <td>N</td>
+      <td>5E03</td>
+      <td>011XX Blk Tupelo St</td>
+      <td>70117</td>
+      <td>5</td>
+      <td>POINT (-90.01110609 29.96044253)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>A0001021</td>
+      <td>94</td>
+      <td>DISCHARGING FIREARM</td>
+      <td>1A</td>
+      <td>94</td>
+      <td>DISCHARGING FIREARM</td>
+      <td>2D</td>
+      <td>3684916</td>
+      <td>536850</td>
+      <td>01/01/2021 12:04:19 AM</td>
+      <td>...</td>
+      <td>01/01/2021 01:35:08 AM</td>
+      <td>01/01/2021 01:56:55 AM</td>
+      <td>RTF</td>
+      <td>REPORT TO FOLLOW</td>
+      <td>N</td>
+      <td>5A05</td>
+      <td>012XX Blk Elysian Fields Ave</td>
+      <td>70116</td>
+      <td>5</td>
+      <td>POINT (-90.05709394 29.97004982)</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>A0001121</td>
+      <td>94F</td>
+      <td>FIREWORKS</td>
+      <td>1A</td>
+      <td>103F</td>
+      <td>FIGHT</td>
+      <td>2D</td>
+      <td>3676697</td>
+      <td>526433</td>
+      <td>01/01/2021 12:06:10 AM</td>
+      <td>...</td>
+      <td>01/01/2021 03:09:39 AM</td>
+      <td>01/01/2021 03:22:54 AM</td>
+      <td>GOA</td>
+      <td>GONE ON ARRIVAL</td>
+      <td>N</td>
+      <td>6H02</td>
+      <td>016XX S Liberty St</td>
+      <td>70113</td>
+      <td>6</td>
+      <td>POINT (-90.08341098 29.94165311)</td>
     </tr>
   </tbody>
 </table>
-<p>353268 rows × 21 columns</p>
+<p>10 rows × 21 columns</p>
 </div>
 </div>
 
@@ -14909,10 +14913,10 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_zones</span>
 </pre></div>
 
      </div>
@@ -14928,53 +14932,143 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\envs\Capstone\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_loc</span><span class="ansi-blue-intense-fg ansi-bold">(self, key, method, tolerance)</span>
-<span class="ansi-green-fg">   3360</span>             <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 3361</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_engine<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>casted_key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3362</span>             <span class="ansi-green-intense-fg ansi-bold">except</span> KeyError <span class="ansi-green-intense-fg ansi-bold">as</span> err<span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\envs\Capstone\lib\site-packages\pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\envs\Capstone\lib\site-packages\pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-
-<span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;Day of Week&#39;
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">C:\WINDOWS\TEMP/ipykernel_11932/4263311051.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-red-intense-fg ansi-bold">#get the number of calls for each day of the week</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>df_Calls<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Day of Week&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>value_counts<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">      3</span> <span class="ansi-red-intense-fg ansi-bold">#get the number of calls for each day of the week</span>
-<span class="ansi-green-fg">      4</span> df_Calls<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Day of Week&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>value_counts<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>plot<span class="ansi-yellow-intense-fg ansi-bold">(</span>kind<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;bar&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\envs\Capstone\lib\site-packages\pandas\core\frame.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
-<span class="ansi-green-fg">   3456</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>columns<span class="ansi-yellow-intense-fg ansi-bold">.</span>nlevels <span class="ansi-yellow-intense-fg ansi-bold">&gt;</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   3457</span>                 <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_getitem_multilevel<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 3458</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>indexer <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>columns<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3459</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> is_integer<span class="ansi-yellow-intense-fg ansi-bold">(</span>indexer<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   3460</span>                 indexer <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>indexer<span class="ansi-yellow-intense-fg ansi-bold">]</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\envs\Capstone\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_loc</span><span class="ansi-blue-intense-fg ansi-bold">(self, key, method, tolerance)</span>
-<span class="ansi-green-fg">   3361</span>                 <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_engine<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>casted_key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3362</span>             <span class="ansi-green-intense-fg ansi-bold">except</span> KeyError <span class="ansi-green-intense-fg ansi-bold">as</span> err<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 3363</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">raise</span> KeyError<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">from</span> err
-<span class="ansi-green-fg">   3364</span> 
-<span class="ansi-green-fg">   3365</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> is_scalar<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">and</span> isna<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">and</span> <span class="ansi-green-intense-fg ansi-bold">not</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>hasnans<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;Day of Week&#39;</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>the_geom</th>
+      <th>OBJECTID</th>
+      <th>Zone</th>
+      <th>District</th>
+      <th>Shape_Length</th>
+      <th>Shape_Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MULTIPOLYGON (((-90.066369220964 29.9528235013...</td>
+      <td>1883</td>
+      <td>8C</td>
+      <td>8</td>
+      <td>6792.167688</td>
+      <td>2.012343e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MULTIPOLYGON (((-90.096467011995 29.9414493437...</td>
+      <td>1855</td>
+      <td>6K</td>
+      <td>6</td>
+      <td>8518.748545</td>
+      <td>4.324270e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MULTIPOLYGON (((-90.100235367426 29.9209080675...</td>
+      <td>1860</td>
+      <td>6P</td>
+      <td>6</td>
+      <td>11703.354343</td>
+      <td>7.651238e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MULTIPOLYGON (((-90.108388478789 29.9349666704...</td>
+      <td>1784</td>
+      <td>2I</td>
+      <td>2</td>
+      <td>14995.498757</td>
+      <td>1.318799e+07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MULTIPOLYGON (((-90.065506929482 29.9391674081...</td>
+      <td>1847</td>
+      <td>6C</td>
+      <td>6</td>
+      <td>13163.392602</td>
+      <td>5.747707e+06</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>MULTIPOLYGON (((-90.111520545347 29.9527465406...</td>
+      <td>1795</td>
+      <td>2U</td>
+      <td>2</td>
+      <td>13072.875152</td>
+      <td>9.234422e+06</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>MULTIPOLYGON (((-90.058618074754 29.9913549365...</td>
+      <td>1819</td>
+      <td>3X</td>
+      <td>3</td>
+      <td>19241.277584</td>
+      <td>1.299197e+07</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>MULTIPOLYGON (((-90.040725013307 29.9469852425...</td>
+      <td>1827</td>
+      <td>4G</td>
+      <td>4</td>
+      <td>14627.126145</td>
+      <td>1.251777e+07</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>MULTIPOLYGON (((-90.058944234626 29.9502226780...</td>
+      <td>1882</td>
+      <td>8B</td>
+      <td>8</td>
+      <td>10947.349649</td>
+      <td>6.273422e+06</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>MULTIPOLYGON (((-89.937028042035 30.0278311720...</td>
+      <td>1873</td>
+      <td>7L</td>
+      <td>7</td>
+      <td>131472.657696</td>
+      <td>8.429538e+08</td>
+    </tr>
+  </tbody>
+</table>
+<p>126 rows × 6 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
